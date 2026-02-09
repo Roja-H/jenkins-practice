@@ -5,6 +5,10 @@ pipeline {
     environment { 
         COURSE = 'JENKINS'
     }
+    options {
+        timeout(time: 10, unit: 'SECONDS')
+        disableConcurrentBuilds() 
+    }
     
     // Build
     stages {  // goovy based 
@@ -14,6 +18,7 @@ pipeline {
                   sh """
 
                   echo 'hey Building..' 
+                  sleep 10
                   env
 
                 """ 
@@ -24,7 +29,6 @@ pipeline {
             steps {
                 script{
                   echo 'nice Testing..' 
-                  env 
                 }
             }
         }
