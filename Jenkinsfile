@@ -20,6 +20,7 @@ pipeline {
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
+    
     // Build
     stages {  // goovy based 
         stage('Build') {
