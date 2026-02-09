@@ -22,7 +22,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                scipt{
+                script{
                     echo 'Deploying..'
                 }
             }
