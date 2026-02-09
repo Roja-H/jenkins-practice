@@ -1,8 +1,9 @@
 pipeline {
-    agent {
+    agent  {
         label 'AGENT-1'
     }
-      //build 
+    
+    // Build
     stages {
         stage('Build') {
             steps {
@@ -19,12 +20,13 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+        
     }
-}
- post { 
+
+    post { 
         always { 
             echo 'I will always say Hello again!'
-            deleteDir() // after dowloading data everytime we delete workspace bcz it shld not clash
+            deleteDir()
         }
         success { 
             echo 'Hello Success'
@@ -33,3 +35,4 @@ pipeline {
             echo 'Hello Failure'
         }
     }
+}
