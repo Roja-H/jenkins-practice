@@ -23,7 +23,8 @@ pipeline {
         stage('Test') {
             steps {
                 script{
-                  echo 'Testing..'  
+                  echo 'nice Testing..' 
+                  env 
                 }
             }
         }
