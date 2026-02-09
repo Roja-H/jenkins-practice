@@ -20,7 +20,7 @@ pipeline {
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
-    
+
     // Build
     stages {  // goovy based 
         stage('Build') {
@@ -46,6 +46,15 @@ pipeline {
         }
         
         stage('Deploy') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+
             steps {
                 script{
                     echo 'Deploying..'
