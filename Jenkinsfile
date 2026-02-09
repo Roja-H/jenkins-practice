@@ -2,6 +2,9 @@ pipeline {
     agent  {
         label 'AGENT-1'
     }
+    environment { 
+        COURSE = 'JENKINS'
+    }
     
     // Build
     stages {  // goovy based 
